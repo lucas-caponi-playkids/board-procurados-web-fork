@@ -1,4 +1,7 @@
 {
   "semi": false,
-  "singleQuote": true
+  "singleQuote": true,
+  "editor.tabSize": 4,
+  "prettier.tabWidth": 4,
+  "trailingComma": "none"
 }

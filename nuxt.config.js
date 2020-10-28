@@ -47,7 +47,12 @@ export default {
         code: 'es',
         file: 'es-ES.js',
       },
+      {
+        code: 'pt-br',
+        file: 'pt-BR.js',
+      }
     ],
+    strategy: 'prefix',
     defaultLocale: 'es',
     vueI18n: {
       fallbackLocale: 'en',
