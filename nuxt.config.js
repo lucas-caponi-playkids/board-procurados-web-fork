@@ -35,6 +35,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     'nuxt-i18n',
+    '@nuxtjs/date-fns',
   ],
 
   i18n: {
