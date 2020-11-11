@@ -1,19 +1,25 @@
 <template>
   <div class="wanted-container">
-    <ul v-for="person in wanted_people" :key="person.name">
-      <li>
-        <img :src="person.image" alt="" />
-        <p>{{ person.name }}</p>
-        <p>
-          {{ $t('currency_prefix') }}
-          {{ person.reward }}
-          {{ $t('currency_code') }}
-        </p>
-        <p>
-          {{ $dateFns.format(person.wanted_since, $t('currency_date_format')) }}
-        </p>
-      </li>
-    </ul>
+    <Report />
+
+    <div class="wanted-people">
+      <ul v-for="person in wanted_people" :key="person.name">
+        <li>
+          <img :src="person.image" alt="" />
+          <p>{{ person.name }}</p>
+          <p>
+            {{ $t('currency_prefix') }}
+            {{ person.reward }}
+            {{ $t('currency_code') }}
+          </p>
+          <p>
+            {{
+              $dateFns.format(person.wanted_since, $t('currency_date_format'))
+            }}
+          </p>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -57,9 +63,15 @@ export default {
 }
 </script>
 <style lang="scss">
-.wanted-container {
+.wanted-people {
+  display: flex;
   img {
     width: 200px;
+  }
+
+  li {
+    margin: 20px;
+    list-style: none;
   }
 }
 </style>
