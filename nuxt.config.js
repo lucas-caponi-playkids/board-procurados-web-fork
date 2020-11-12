@@ -30,6 +30,30 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
+
+    ["@dansmaculotte/nuxt-security",
+      {
+        dev: true,
+        csp: {
+          directives: {
+            defaultSrc: ["'self'"],
+            scriptSrc: [
+              "'self'",
+              "'sha256-V3BCJ5uD3Kg5rYNnehUAfG7F2MSoV0wetV4iU6feE7w='",
+              "'unsafe-eval'",
+            ],
+            connectSrc: ["'self'"],
+            imgSrc: ["'self'", "https://ca.slack-edge.com"],
+            styleSrc: ["'self'"],
+          },
+          loose: false,
+          reportOnly: false,
+          setAllHeaders: false,
+          disableAndroid: false,
+          browserSniff: true,
+        },
+      },
+    ]
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -68,5 +92,7 @@ export default {
   axios: {},
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    extractCSS: true,
+  },
 }
